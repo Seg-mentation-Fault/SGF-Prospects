@@ -4,8 +4,8 @@ const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
   port: 587,
   auth: {
-    user: 'reservation.av.calendar@gmail.com',
-    pass: 'SgfAvailability2021#',
+    user: authEmail.email,
+    pass: authEmail.pass,
   },
 });
 exports.transporter = transporter;
