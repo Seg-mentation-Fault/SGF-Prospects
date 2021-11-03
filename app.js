@@ -5,7 +5,7 @@ const storage = require('./src/connection');
 const routes = require('./src/routes');
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 // enable cors
 app.use(cors());
@@ -22,5 +22,5 @@ app.use(
 app.use('/api/v1', routes(storage));
 
 app.listen(port, () => {
-  console.log('is runing in port 3000');
+  console.log('is runing in port 3001');
 });
