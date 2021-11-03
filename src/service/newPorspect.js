@@ -1,3 +1,4 @@
+const { transporter } = require('./email');
 const { createProspect } = require('../controllers/prospectController');
 
 /**
@@ -14,6 +15,19 @@ const newProspect = async (storage, attributes) => {
 
   try {
     const prospect = await createProspect(storage, attributes, t);
+    const message = {
+      from: 'reservation.av.calendar@gmail.com',
+      to: attributes.email,
+      subject: `Welcome to Segmentation Fault News Letter`,
+      text: `Thanks for subscribing to the Segmentation Fault Availability Calendar newsletter.
+
+      We will be informing you about the most important update of the project so that you are aware.`,
+    };
+    transporter.sendMail(message, (err) => {
+      if (err) {
+        throw err;
+      }
+    });
     await t.commit();
     return { prospect };
   } catch (error) {
