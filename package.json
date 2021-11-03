@@ -1,0 +1,19 @@
+{
+  "name": "sgf-prospects",
+  "version": "0.0.1",
+  "description": "API to manage the prospects contats",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js --trace-warnings",
+    "test": "jest -- --silent"
+  },
+  "author": "Segmentation Fault",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.13.0",
+    "mysql2": "^2.3.2",
+    "sequelize": "^6.9.0"
+  }
+}
